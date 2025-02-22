@@ -1,0 +1,59 @@
+.hero-section {
+    position: relative;
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden; /* Ensures background doesn't scroll separately */
+  }
+  
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* shorthand for top: 0; right: 0; bottom: 0; left: 0; */
+    background: url("../../images/background.jpeg") center center / cover no-repeat;
+    filter: grayscale(100%); /* Makes the image black & white */
+    z-index: -2; /* Place behind overlay and text */
+  }
+  
+  /* Optional: Add a semi-transparent overlay */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+    z-index: -1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1; /* Ensure text is above overlay */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Elements you want to animate should have this class */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  /* Class to trigger the animation */
+  .animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  section {
+    min-height: 100vh; /* Each section will take at least 100% of the viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers the content */
+    align-items: center;     /* Horizontally centers the content */
+    padding: 20px;           /* Optional: Adds some padding */
+  }
+  section {
+    min-height: calc(100vh - 60px);
+  }
+      
